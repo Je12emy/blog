@@ -5,14 +5,14 @@ import { Icon } from "astro-icon";
 
 <header>
 	<nav
-		class="flex flex-row justify-around items-center text-gray-50 no-underline mt-8 text-5xl"
+		class="flex flex-row-reverse items-start md:flex-row justify-around md:items-center text-gray-50 no-underline mt-8 text-5xl"
 	>
 		<HeaderLink
 			href="/"
 			class="font-inter font-light text-7xl tracking-[-0.165em]"
 			>12</HeaderLink
 		>
-		<div class="flex flex-row justify-center items-center space-x-8 no-underline font-thin font-open-sans">
+		<div class="flex flex-col items-baseline space-y-4 md:flex-row justify-center md:items-center md:space-x-8 no-underline font-thin font-open-sans">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="https://github.com/je12emy" target="_blank">
