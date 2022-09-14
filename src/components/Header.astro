@@ -20,30 +20,34 @@ import { Icon } from "astro-icon";
 			class="font-inter font-light text-7xl tracking-[-0.165em]"
 			>12</HeaderLink
 		>
-		<button id="menuToggle">
-			<Icon
-				name="ant-design:menu-outlined"
-				class="md:hidden text-gray-50 w-16 h-16"
-			/>
-		</button>
 		<div
-			id="menu"
-			class="flex flex-col items-baseline space-y-4 md:flex-row justify-center md:items-center md:space-x-8 no-underline font-thin font-open-sans"
+			class="flex flex-col space-y-2 md:space-y-0 md:flex-row md:items-center md:justify-center"
 		>
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="https://github.com/je12emy" target="_blank">
+			<button id="menuToggle">
 				<Icon
-					class="w-16 h-16 text-gray-50"
-					name="ant-design:github-fill"
+					name="ant-design:menu-outlined"
+					class="md:hidden text-gray-50 w-16 h-16"
 				/>
-			</HeaderLink>
-			<HeaderLink href="https://twitter.com/jel2emy" target="_blank">
-				<Icon
-					class="w-16 h-16 text-gray-50"
-					name="ant-design:twitter-circle-filled"
-				/>
-			</HeaderLink>
+			</button>
+			<div
+				id="menu"
+				class="flex flex-col items-baseline space-y-4 md:space-y-0 md:flex-row justify-center md:items-center md:space-x-8 no-underline font-thin font-open-sans"
+			>
+				<HeaderLink href="/">Home</HeaderLink>
+				<HeaderLink href="/blog">Blog</HeaderLink>
+				<HeaderLink href="https://github.com/je12emy" target="_blank">
+					<Icon
+						class="w-16 h-16 text-gray-50"
+						name="ant-design:github-fill"
+					/>
+				</HeaderLink>
+				<HeaderLink href="https://twitter.com/jel2emy" target="_blank">
+					<Icon
+						class="w-16 h-16 text-gray-50"
+						name="ant-design:twitter-circle-filled"
+					/>
+				</HeaderLink>
+			</div>
 		</div>
 	</nav>
 </header>
