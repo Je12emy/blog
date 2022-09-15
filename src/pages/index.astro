@@ -4,7 +4,13 @@ import GradientText from "../components/GradientText.astro";
 ---
 
 <BaseLayout class="flex flex-col items-center">
-<div class="mt-14 h-screen flex flex-col items-center break-words">
-	<h1 class="text-6xl text-gray-50 font-bold text-center leading-tight">Hi! I'm <GradientText element="span" text="Je12emy"/></h1>
-</div>
+	<div class="mt-14 h-screen flex flex-col space-y-6 items-center break-words">
+		<h1 class="text-6xl md:text-8xl text-gray-50 font-open-sans font-bold text-center leading-tight">
+			Hi! I'm <GradientText element="span" text="Je12emy" />
+		</h1>
+		<p class="font-nunito text-3xl md:text-5xl text-gray-50 text-left leading-normal md:leading-relaxed">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+			eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		</p>
+	</div>
 </BaseLayout>

@@ -14,8 +14,8 @@ const { class: className } = Astro.props;
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class:list={[className, "bg-slate-900"]}>
+	<body class:list={[className, "bg-slate-900 mx-8 md:mx-56"]}>
 		<Header />
-		<slot class="mx-4" />
+		<slot />
 	</body>
 </html>
