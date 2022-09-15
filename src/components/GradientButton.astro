@@ -1,11 +1,15 @@
 ---
 type Props = {
     text: string;
+    class: string;
 };
-const { text } = Astro.props;
+const { text, class: className } = Astro.props;
 ---
 
 <button
-    class="p-4 rounded-md text-2xl md:text-3xl font-bold font-nunito cursor-pointer text-slate-900 bg-gradient-to-b from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 transition-colors duration-500"
+    class:list={[
+        className,
+        "p-4 rounded-md text-2xl md:text-3xl font-bold font-nunito cursor-pointer text-slate-900 bg-gradient-to-b from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 transition-colors duration-500",
+    ]}
     >{text}
 </button>
