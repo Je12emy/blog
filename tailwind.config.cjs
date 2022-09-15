@@ -6,6 +6,7 @@ module.exports = {
 			fontFamily: {
 				'open-sans': ['Open Sans', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
+				'nunito': ['Nunito Sans', 'sans-serif']
 			}
 		},
 	},
