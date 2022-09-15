@@ -1,0 +1,13 @@
+---
+type Props = {
+    element: "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h5";
+    text: string;
+};
+const { element, text } = Astro.props;
+const Element = element;
+---
+
+<Element
+    class="bg-clip-text text-transparent bg-gradient-to-b from-cyan-500 to-blue-500"
+    >{text}
+</Element>

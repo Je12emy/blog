@@ -1,7 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import GradientText from "../components/GradientText.astro";
 ---
 
-<BaseLayout>
-	<h1 class="text-3xl text-gray-50">Hi! I'm Jeremy</h1>
+<BaseLayout class="flex flex-col items-center">
+<div class="mt-14 h-screen flex flex-col items-center break-words">
+	<h1 class="text-6xl text-gray-50 font-bold text-center leading-tight">Hi! I'm <GradientText element="span" text="Je12emy"/></h1>
+</div>
 </BaseLayout>

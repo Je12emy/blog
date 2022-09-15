@@ -2,13 +2,19 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+type Props = {
+	class?: string;
+};
+
+const { class: className } = Astro.props;
 ---
 
 <html>
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-slate-900">
+	<body class:list={[className, "bg-slate-900"]}>
 		<Header />
 		<slot class="mx-4" />
 	</body>
