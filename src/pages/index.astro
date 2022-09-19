@@ -3,6 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import GradientText from "../components/GradientText.astro";
 import GradientButton from "../components/GradientButton.astro";
 import { Icon } from "astro-icon";
+import Showcase from "../components/Showcase.astro";
+import Carousel from "../components/Carousel";
 ---
 
 <BaseLayout class="flex flex-col items-center">
@@ -63,4 +65,8 @@ import { Icon } from "astro-icon";
 			</p>
 		</section>
 	</article>
+
+	<Carousel>
+		<Showcase />
+	</Carousel>
 </BaseLayout>

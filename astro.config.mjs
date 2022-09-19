@@ -11,7 +11,8 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind(), solidJs()],
   vite: {
     ssr: {
-      external: ["svgo"]
+      external: ["svgo"],
+      noExternal: ["solid-slider"]
     }
   }
 });
