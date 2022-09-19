@@ -1,0 +1,14 @@
+[
+  {
+    "title": "React Native Development",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "showcase-image": "/img/react-native-showcase.png",
+    "techonologies": ["react", "expo", "google-maps"]
+  },
+  {
+    "title": "React Development",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "showcase-image": "/img/react-showcase.png",
+    "techonologies": ["react", "nestjs", "google-maps"]
+  }
+]
