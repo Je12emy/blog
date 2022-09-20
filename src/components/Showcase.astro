@@ -1,15 +1,66 @@
 ---
 import data from "../../public/experience.json";
+import GradientText from "./GradientText.astro";
+import { Icon } from "astro-icon";
 ---
 
-{
-    data.map((item) => (
-        <section class="w-full grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1">
-            <img src={`${item["showcase-image"]}`} />
-            <div class="flex flex-col items-center justify-center text-gray-50 space-y-4">
-                <h1 class="text-3xl">{item.title}</h1>
-                <p>{item.description}</p>
-            </div>
-        </section>
-    ))
-}
+<script>
+    let currentSlide = 1;
+    showSlides(currentSlide);
+
+    function showSlides(selected: number) {
+        const slides = document.getElementsByClassName("carousel-item");
+        // User has selected an options outside of the available slides
+        if (selected > slides.length) {
+            // Selected the first currentSlide
+            currentSlide = 1;
+        }
+        // User goes completely back into the carousel
+        if (selected < 1) {
+            currentSlide = selected;
+        }
+        // Add the "hidden" class to all slides
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].setAttribute("class", "hidden");
+        }
+        displayElement(slides[currentSlide - 1]);
+    }
+    /*
+     * Toggle the required class names in order to display a given HTML element
+     */
+    function displayElement(element: Element) {
+        element.classList.remove("hidden");
+        element.classList.add("grid");
+    }
+</script>
+
+<article class="flex flex-col space-y-8 md:space-y-12 justify-center items-start">
+    <h1
+        class="text-6xl md:text-9xl text-gray-50 font-open-sans font-bold text-center leading-tight"
+    >
+        Previous <GradientText element="span" text="Exerience" />
+    </h1>
+    {
+        data.map((item) => (
+            <section class="carousel-item grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 justify-items-center">
+                <img class="shadow-md" src={`${item.image}`} />
+                <div class="flex flex-col items-center justify-center text-gray-50 space-y-4 md:space-y-6 leading-relaxed">
+                    <h1 class="text-5xl md:text-6xl text-center leading-relaxed font-bold font-open-sans">
+                        {item.title}
+                    </h1>
+                    <p class="text-3xl md:text-4xl font-nunito leading-relaxed text-left md:leading-relaxed">
+                        {item.description}
+                    </p>
+                    <div class="grid grid-rows-1 grid-cols-3 w-full mt-6">
+                        {item.stack.map((tech) => (
+                        <div class="flex flex-col items-center justify-center md:space-y-4 font-nunito font-light">
+                            <Icon name={`${tech.icon}`} class="h-16 w-16" />
+                            <h1 class="text-gray-50 text-2xl"> {tech.technology} </h1>
+                        </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        ))
+    }
+</article>

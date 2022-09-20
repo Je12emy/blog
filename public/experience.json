@@ -2,13 +2,45 @@
   {
     "title": "React Native Development",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "showcase-image": "/img/react-native-showcase.png",
-    "techonologies": ["react", "expo", "google-maps"]
+    "image": "/img/react-native-showcase.png",
+    "stack": [
+      {
+        "technology": "React",
+        "icon": "akar-icons:react-fill",
+        "url": "https://reactjs.org/"
+      },
+      {
+        "technology": "Expo",
+        "icon": "cib:expo",
+        "url": "https://expo.dev/"
+      },
+      {
+        "technology": "RN Maps",
+        "icon": "bxs:map-alt",
+        "url": "https://github.com/react-native-maps/react-native-maps"
+      }
+    ]
   },
   {
     "title": "React Development",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "showcase-image": "/img/react-showcase.png",
-    "techonologies": ["react", "nestjs", "google-maps"]
+    "image": "/img/react-showcase.png",
+    "stack": [
+      {
+        "technology": "React",
+        "icon": "logos:react",
+        "url": "https://reactjs.org/"
+      },
+      {
+        "technology": "NestJS",
+        "icon": "logos:nestjs",
+        "url": "https://nestjs.com/"
+      },
+      {
+        "technology": "Tailwind",
+        "icon": "logos:tailwindcss-icon",
+        "url": "https://tailwindcss.com/"
+      }
+    ]
   }
 ]
