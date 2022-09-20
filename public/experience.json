@@ -1,28 +1,28 @@
 [
   {
-    "title": "React Native Development",
+    "title": "React Native Front-end Development",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "image": "/img/react-native-showcase.png",
     "stack": [
       {
         "technology": "React",
-        "icon": "akar-icons:react-fill",
+        "icon": "logos:react",
         "url": "https://reactjs.org/"
       },
       {
         "technology": "Expo",
-        "icon": "cib:expo",
+        "icon": "vscode-icons:file-type-expo",
         "url": "https://expo.dev/"
       },
       {
         "technology": "RN Maps",
-        "icon": "bxs:map-alt",
+        "icon": "logos:google-maps",
         "url": "https://github.com/react-native-maps/react-native-maps"
       }
     ]
   },
   {
-    "title": "React Development",
+    "title": "Full Stack Development",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "image": "/img/react-showcase.png",
     "stack": [
