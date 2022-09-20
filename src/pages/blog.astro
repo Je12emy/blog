@@ -1,57 +1,33 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import GradientText from "../components/GradientText.astro";
+import Post from "../components/Post.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+	(a, b) =>
+		new Date(b.frontmatter.pubDate).valueOf() -
+		new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li time {
-				flex: 0 0 130px;
-				font-style: italic;
-				color: #888;
-			}
-			ul li a:visited {
-				color: #8e32dc;
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{posts.map((post) => (
-						<li>
-							<time datetime={post.frontmatter.pubDate}>
-								{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-									year: 'numeric',
-									month: 'short',
-									day: 'numeric',
-								})}
-							</time>
-							<a href={post.url}>{post.frontmatter.title}</a>
-						</li>
-					))}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout class="flex flex-col items-center space-y-12 md:space-y-24 pb-4">
+	<h1
+		class="text-6xl md:text-9xl text-gray-50 font-open-sans font-bold text-center leading-tight"
+	>
+		This is my <GradientText element="span" text="Blog" />
+	</h1>
+	<div class="grid grid-cols-1 gap-y-6 w-full text-gray-50">
+		{
+			posts.map((post) => (
+				<Post
+					title={post.frontmatter.title}
+					description={post.frontmatter.description}
+					date={post.frontmatter.pubDate}
+					featuredImage={post.frontmatter.heroImage}
+					href={post.url}
+				/>
+			))
+		}
+	</div>
+</BaseLayout>

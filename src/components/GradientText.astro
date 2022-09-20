@@ -2,12 +2,16 @@
 type Props = {
     element: "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h5";
     text: string;
+    class?: string;
 };
-const { element, text } = Astro.props;
+const { element, text, class: className } = Astro.props;
 const Element = element;
 ---
 
 <Element
-    class="bg-clip-text text-transparent bg-gradient-to-b from-cyan-500 to-blue-500"
+    class:list={[
+        "bg-clip-text text-transparent bg-gradient-to-b from-cyan-500 to-blue-500",
+        className,
+    ]}
     >{text}
 </Element>

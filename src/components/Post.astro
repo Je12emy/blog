@@ -1,0 +1,48 @@
+---
+import GradientText from "./GradientText.astro";
+
+type Props = {
+    featuredImage: string;
+    title: string;
+    description: string;
+    date: Date;
+    href: string;
+};
+
+const { featuredImage, title, description, date, href } = Astro.props;
+---
+
+<article
+    class="w-full h-52 md:h-64 bg-slate-800 shadow-md rounded-md flex flex-row space-y-2 md:leading-relaxed"
+>
+    <img
+        class="rounded-l-md w-40 md:w-96 object-cover shadow-md"
+        src={`${featuredImage}`}
+    />
+    <div
+        class="flex flex-col justify-start m-2 md:justify-around items-center w-full"
+    >
+        <h1 class="font-bold text-center font-open-sans text-xl md:text-3xl">{title}</h1>
+        <time class="text-gray-500 font-open-sans" datetime={date.toString()}>
+            {
+                new Date(date).toLocaleDateString("en-us", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                })
+            }
+        </time>
+        <p
+            class="overflow-hidden text-ellipsis break-words font-nunito text-base font-light md:text-xl"
+        >
+            {description}
+        </p>
+        <a href={href} class="mx-auto mt-auto mb-1 md:mb-2"
+            ><GradientText
+                element="span"
+                text="Read more"
+                class="font-bold cursor-pointer"
+            />
+        </a>
+    </div>
+</article>
