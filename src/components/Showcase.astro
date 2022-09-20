@@ -21,7 +21,7 @@ import { Icon } from "astro-icon";
         }
         // Add the "hidden" class to all slides
         for (let i = 0; i < slides.length; i++) {
-            hideElement(slides[i])
+            hideElement(slides[i]);
         }
         displayElement(slides[currentSlide - 1]);
     }
@@ -50,7 +50,7 @@ import { Icon } from "astro-icon";
 </script>
 
 <article
-    class="flex flex-col space-y-8 md:space-y-12 justify-center items-start pb-8"
+    class="flex flex-col space-y-8 md:space-y-12 justify-center items-start pb-8 relative"
 >
     <h1
         class="text-6xl md:text-9xl text-gray-50 font-open-sans font-bold text-center leading-tight"
@@ -82,9 +82,10 @@ import { Icon } from "astro-icon";
             </section>
         ))
     }
-    <button
-        id="nextButton"
-        class="bg-gray-50 text-slate-900 p-4 shadow-md rounded-md font-bold"
-        >Next</button
-    >
+    <button id="nextButton" class="mx-auto md:absolute md:-right-12"
+        ><Icon
+            name="akar-icons:circle-chevron-right"
+            class="h-14 w-14 text-gray-50"
+        />
+    </button>
 </article>
