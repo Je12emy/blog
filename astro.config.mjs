@@ -3,16 +3,13 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 
-import solidJs from "@astrojs/solid-js";
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), tailwind(), solidJs()],
+  integrations: [mdx(), sitemap(), tailwind()],
   vite: {
     ssr: {
       external: ["svgo"],
-      noExternal: ["solid-slider"]
     }
   }
 });
