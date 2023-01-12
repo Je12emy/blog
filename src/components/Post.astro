@@ -1,15 +1,16 @@
 ---
 interface Props {
+    url: string;
     title: string;
     date: string;
     description: string;
 }
 
-const { title, date, description } = Astro.props;
+const { url, title, date, description } = Astro.props;
 ---
 
 <section class="flex flex-col items-start text-xl space-y-1">
-    <h1 class="font-medium">{title}</h1>
+    <a href={url}><h1 class="font-medium">{title}</h1> </a>
     <p class="font-light">{description}</p>
     <time class="font-light text-lg text-gray-600" datetime={date}>
         {
