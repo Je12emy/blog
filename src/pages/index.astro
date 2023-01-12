@@ -1,7 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Main from "../layouts/Main.astro";
 ---
 
 <!DOCTYPE html>
@@ -9,13 +9,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="w-screen h-screen flex flex-row justify-between">
-		<Header />
-		<main class="w-full h-full flex flex-col justify-center space-y-2">
-			<p class="text-5xl text-left w-3/5 leading-normal">
-				I'm a software engineer and web development enthusiast, here to learn and grow.
-			</p>
-			<h1 class="text-[13.75rem] ml-auto mr-20">Je12emy</h1>
-		</main>
-	</body>
+	<Main>
+		<p class="text-5xl text-left w-3/5 leading-normal">
+			I'm a software engineer and web development enthusiast, here to
+			learn and grow.
+		</p>
+		<h1 class="text-[13.75rem] ml-auto mr-20">Je12emy</h1>
+	</Main>
 </html>
