@@ -1,5 +1,6 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import { Icon } from "astro-icon";
 ---
 
 <header class="w-44">
@@ -8,18 +9,27 @@ import HeaderLink from "./HeaderLink.astro";
 			<HeaderLink href="/">About</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 		</div>
-		<div class="mb-6 mt-auto">
+		<div class="mb-6 mt-auto flex flex-col">
 			<HeaderLink
-				href="https://twitter.com/astrodotbuild"
+				href="https://www.linkedin.com/in/jeremy-zelaya-729650181/"
 				target="_blank"
 			>
-				Twitter
+				<Icon class="p-4" name="cib:linkedin" />
+				<span class="sr-only">LinkedIn</span>
 			</HeaderLink>
 			<HeaderLink
-				href="https://github.com/withastro/astro"
+				href="https://twitter.com/je12emy_dev"
 				target="_blank"
 			>
-				GitHub
+				<Icon class="p-4" name="cib:twitter" />
+				<span class="sr-only">Twitter</span>
+			</HeaderLink>
+			<HeaderLink
+				href="https://github.com/je12emy"
+				target="_blank"
+			>
+				<Icon class="p-4" name="cib:github" />
+				<span class="sr-only">GitHub</span>
 			</HeaderLink>
 		</div>
 	</nav>
