@@ -24,9 +24,9 @@ const {
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<Main class="justify-center">
+	<Main class="justify-center overflow-y-scroll">
 		<article
-			class="m-10 h-full font-normal leading-normal text-lg flex flex-col w-4/5 items-center justify-center text-left space-y-1"
+			class="m-10 h-full font-normal leading-normal text-lg flex flex-col w-4/5 md:items-center md:justify-center text-left space-y-1"
 		>
 			<h1 class="font-semibold mr-auto">{title}</h1>
 			{pubDate && <DateLabel class="mr-auto" date={pubDate} />}
