@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Main from "../layouts/Main.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import DateLabel from "../components/DateLabel.astro";
 
 export interface Props {
 	content: {
@@ -27,14 +28,8 @@ const {
 		<article
 			class="m-10 h-full font-normal leading-normal text-lg flex flex-col w-4/5 items-center justify-center text-left space-y-1"
 		>
-			<h1 class="font-medium mr-auto">{title}</h1>
-			{
-				pubDate && (
-					<time class="font-light text-gray-600 mr-auto">
-						{pubDate}
-					</time>
-				)
-			}
+			<h1 class="font-semibold mr-auto">{title}</h1>
+			{pubDate && <DateLabel class="mr-auto" date={pubDate} />}
 			<slot />
 		</article>
 	</Main>

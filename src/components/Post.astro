@@ -1,4 +1,6 @@
 ---
+import DateLabel from "./DateLabel.astro";
+
 interface Props {
     url: string;
     title: string;
@@ -12,13 +14,5 @@ const { url, title, date, description } = Astro.props;
 <section class="flex flex-col items-start text-xl space-y-2">
     <a href={url}><h1 class="font-semibold">{title}</h1></a>
     <p class="font-normal">{description}</p>
-    <time class="font-normal text-lg text-gray-400" datetime={date}>
-        {
-            new Date(date).toLocaleDateString("en-us", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-            })
-        }</time
-    >
+    <DateLabel date={date} />
 </section>
