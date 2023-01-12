@@ -1,7 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Post from "../components/Post.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Main from "../layouts/Main.astro";
 
@@ -19,25 +18,14 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<Main>
-		<section>
-			<ul>
-				{
-					posts.map((post) => (
-						<li>
-							<time datetime={post.frontmatter.pubDate}>
-								{new Date(
-									post.frontmatter.pubDate
-								).toLocaleDateString("en-us", {
-									year: "numeric",
-									month: "short",
-									day: "numeric",
-								})}
-							</time>
-							<a href={post.url}>{post.frontmatter.title}</a>
-						</li>
-					))
-				}
-			</ul>
-		</section>
+		{
+			posts.map((post) => (
+				<Post
+					title={post.frontmatter.title}
+					date={post.frontmatter.pubDate}
+					description={post.frontmatter.description}
+				/>
+			))
+		}
 	</Main>
 </html>
