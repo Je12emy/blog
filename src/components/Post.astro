@@ -9,10 +9,10 @@ interface Props {
 const { url, title, date, description } = Astro.props;
 ---
 
-<section class="flex flex-col items-start text-xl space-y-1">
-    <a href={url}><h1 class="font-medium">{title}</h1> </a>
+<section class="flex flex-col items-start text-xl space-y-2">
+    <a href={url}><h1 class="font-semibold">{title}</h1></a>
     <p class="font-normal">{description}</p>
-    <time class="font-normal text-lg text-gray-600" datetime={date}>
+    <time class="font-normal text-lg text-gray-400" datetime={date}>
         {
             new Date(date).toLocaleDateString("en-us", {
                 year: "numeric",

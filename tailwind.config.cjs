@@ -5,7 +5,11 @@ module.exports = {
 		fontFamily: {
 			ibm_plex_sans: ["IBM Plex Sans", "sans-serif"]
 		},
-		extend: {},
+		extend: {
+			colors: {
+				"dark": "#161616"
+			}
+		},
 	},
 	plugins: [],
 }
