@@ -3,32 +3,30 @@ import HeaderLink from "./HeaderLink.astro";
 import { Icon } from "astro-icon";
 ---
 
-<header class="w-44">
-	<nav class="h-full w-full flex flex-col items-center">
-		<div class="mt-6 flex flex-col space-y-2.5 text-2xl">
+<header class="w-screen md:w-44">
+	<nav class="p-4 h-full w-full flex flex-row md:flex-col items-center bg-dark">
+		<div
+			class="md:mt-6 flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-2.5 text-2xl"
+		>
 			<HeaderLink href="/">About</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 		</div>
-		<div class="mb-6 mt-auto flex flex-col">
+		<div
+			class="md:mb-6 md:mt-auto md:space-y-4 flex flex-row md:flex-col space-x-2 md:space-x-0 ml-auto md:ml-0"
+		>
 			<HeaderLink
 				href="https://www.linkedin.com/in/jeremy-zelaya-729650181/"
 				target="_blank"
 			>
-				<Icon class="p-4" name="cib:linkedin" />
+				<Icon class="w-8 h-8" name="cib:linkedin" />
 				<span class="sr-only">LinkedIn</span>
 			</HeaderLink>
-			<HeaderLink
-				href="https://twitter.com/je12emy_dev"
-				target="_blank"
-			>
-				<Icon class="p-4" name="cib:twitter" />
+			<HeaderLink href="https://twitter.com/je12emy_dev" target="_blank">
+				<Icon class="w-8 h-8" name="cib:twitter" />
 				<span class="sr-only">Twitter</span>
 			</HeaderLink>
-			<HeaderLink
-				href="https://github.com/je12emy"
-				target="_blank"
-			>
-				<Icon class="p-4" name="cib:github" />
+			<HeaderLink href="https://github.com/je12emy" target="_blank">
+				<Icon class="w-8 h-8" name="cib:github" />
 				<span class="sr-only">GitHub</span>
 			</HeaderLink>
 		</div>
