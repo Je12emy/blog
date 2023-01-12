@@ -1,5 +1,7 @@
 ---
+import BaseHead from "../components/BaseHead.astro";
 import Main from "../layouts/Main.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 export interface Props {
 	content: {
@@ -16,14 +18,24 @@ const {
 } = Astro.props;
 ---
 
+<!DOCTYPE html>
 <html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
 	<Main class="justify-center">
 		<article
-			class="m-10 h-full font-light text-lg flex flex-col w-4/5 items-center justify-center text-left space-y-1"
+			class="m-10 h-full font-normal leading-normal text-lg flex flex-col w-4/5 items-center justify-center text-left space-y-1"
 		>
 			<h1 class="font-medium mr-auto">{title}</h1>
-			{pubDate && <time class="font-light text-gray-600 mr-auto">{pubDate}</time>}
-			<slot class="font-light" />
+			{
+				pubDate && (
+					<time class="font-light text-gray-600 mr-auto">
+						{pubDate}
+					</time>
+				)
+			}
+			<slot />
 		</article>
 	</Main>
 </html>
