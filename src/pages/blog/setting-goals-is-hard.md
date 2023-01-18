@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Setting Goals is hard, specially as a developer"
-description: "Why is setting goals so hard? Is there a easier way to make sure I accomplish my gaols?"
+description: "Why is setting goals so hard? Is there a easier way to make sure I accomplish my goals?"
 pubDate: "Jan 17 2022"
 heroImage: "/placeholder-hero.jpg"
 ---
