@@ -26,11 +26,28 @@ const {
 	</head>
 	<Main class="justify-center overflow-y-scroll">
 		<article
-			class="m-10 h-full font-normal leading-normal text-lg flex flex-col w-4/5 md:items-center md:justify-center text-left space-y-1"
+			class="m-10 py-6 h-full font-normal leading-relaxed text-lg w-4/5 text-left space-y-1"
 		>
 			<h1 class="font-semibold mr-auto">{title}</h1>
 			{pubDate && <DateLabel class="mr-auto" date={pubDate} />}
 			<slot />
 		</article>
 	</Main>
+	<style>
+		article :global(h1, h2, h3, h4, h5, h6) {
+			@apply font-semibold text-left;
+		}
+
+		aritcle :global(p) {
+			@apply text-left mr-auto w-full;
+		}
+
+		article :global(blockquote) {
+			@apply bg-[#292929] p-4 shadow-sm;
+		}
+
+		article :global(ul) {
+			@apply list-disc list-inside indent-1 mx-4;
+		}
+	</style>
 </html>
