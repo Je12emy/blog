@@ -1,8 +1,9 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Main from "../layouts/Main.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import DateLabel from "../components/DateLabel.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 export interface Props {
 	content: {
@@ -24,30 +25,36 @@ const {
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<Main class="justify-center overflow-y-scroll">
+	<body
+		class="w-screen h-screen flex flex-col space-y-8 font-ibm_plex_sans bg-dark text-white px-4 md:px-24 lg:px-48 xl:px-56 2xl:px-96"
+	>
+		<Header />
 		<article
-			class="m-10 md:px-60 py-6 h-full font-normal leading-relaxed text-lg w-4/5 text-left space-y-1"
+			class="font-normal leading-relaxed text-lg text-left space-y-4"
 		>
-			<h1 class="font-semibold mr-auto">{title}</h1>
-			{pubDate && <DateLabel class="mr-auto" date={pubDate} />}
+			<div class="flex flex-col space-y-2 text-xl">
+				<h1 class="font-semibold mr-auto">{">"} {title}</h1>
+				{pubDate && <DateLabel class="mr-auto" date={pubDate} />}
+			</div>
 			<slot />
 		</article>
-	</Main>
-	<style>
-		article :global(h1, h2, h3, h4, h5, h6) {
-			@apply font-semibold text-left;
-		}
+		<Footer />
+		<style>
+			article :global(h1, h2, h3, h4, h5, h6) {
+				@apply font-semibold text-left;
+			}
 
-		aritcle :global(p) {
-			@apply text-left mr-auto w-full;
-		}
+			aritcle :global(p) {
+				@apply text-left mr-auto w-full overflow-y-scroll;
+			}
 
-		article :global(blockquote) {
-			@apply bg-[#292929] p-4 shadow-sm;
-		}
+			article :global(blockquote) {
+				@apply bg-[#292929] p-4 shadow-sm;
+			}
 
-		article :global(ul) {
-			@apply list-disc list-inside indent-1 mx-4;
-		}
-	</style>
+			article :global(ul) {
+				@apply list-disc list-inside indent-1 mx-4;
+			}
+		</style>
+	</body>
 </html>

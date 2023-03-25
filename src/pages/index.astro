@@ -2,6 +2,14 @@
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Main from "../layouts/Main.astro";
+import Post from "../components/Post.astro";
+
+// Use Astro.glob() to fetch all posts, and then sort them by date.
+const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+	(a, b) =>
+		new Date(b.frontmatter.pubDate).valueOf() -
+		new Date(a.frontmatter.pubDate).valueOf()
+);
 ---
 
 <!DOCTYPE html>
@@ -9,13 +17,27 @@ import Main from "../layouts/Main.astro";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<Main class="space-y-4 md:space-y-2 text-center justify-center items-center">
-		<h1 class="text-7xl md:text-[13.75rem] text-white">
-			Je12emy
-		</h1>
-		<p class="text-3xl md:text-5xl md:w-3/5 leading-relaxed">
-			I'm a software engineer and web development enthusiast, here to
-			learn and grow.
-		</p>
+	<Main class="space-y-4 xl:space-y-8">
+		<section>
+			<p class="text-2xl text-center italic xl:w-4/5">
+				If you are reading this, here you will find my journey towards
+				finding a purpose in software engineering.
+			</p>
+		</section>
+		<h1 class="text-xl font-semibold"> {">"} Latest Blog Entries</h1>
+		<section class="space-y-4 xl:space-y-8">
+			{
+				posts
+					.slice(0, 5)
+					.map((post) => (
+						<Post
+							url={post.url}
+							title={post.frontmatter.title}
+							date={post.frontmatter.pubDate}
+							description={post.frontmatter.description}
+						/>
+					))
+			}
+		</section>
 	</Main>
 </html>

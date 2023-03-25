@@ -11,8 +11,8 @@ interface Props {
 const { url, title, date, description } = Astro.props;
 ---
 
-<section class="flex flex-col items-start text-xl space-y-2">
-    <a href={url}><h1 class="font-semibold">{title}</h1></a>
-    <p class="font-normal">{description}</p>
+<section class="flex flex-col items-start text-left text-lg space-y-2">
+    <a href={url}> <h1 class="font-semibold">{title}</h1></a>
+    <p class="font-normal text-left">{description}</p>
     <DateLabel date={date} />
 </section>

@@ -17,7 +17,8 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<Main class="space-y-10 justify-center items-start overflow-y-scroll p-2">
+	<Main class="space-y-4 xl:space-y-8">
+		<h1 class="text-xl font-semibold">{">"} All Blog Entries</h1>
 		{
 			posts.map((post) => (
 				<Post
