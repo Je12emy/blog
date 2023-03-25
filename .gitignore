@@ -17,3 +17,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# The astro docs recomendation
+.astro
