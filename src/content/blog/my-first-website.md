@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "My First Website"
 description: "I finally stopped procrastinating and sat down to build my first website"
 pubDate: "Jan 12 2023"

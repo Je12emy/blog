@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "tPRC makes full stack development fun"
 description: "Full-stack development sometimes feels awful, tRPC makes it so easy you won't go back"
 pubDate: "Jan 23 2023"

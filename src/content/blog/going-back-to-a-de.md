@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "Going back to Desktop Environments"
 description: "After a while window managers loose their magic I guess?"
 pubDate: "Feb 16 2023"

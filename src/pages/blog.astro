@@ -1,15 +1,12 @@
 ---
+import { getCollection } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Post from "../components/Post.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Main from "../layouts/Main.astro";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
-	(a, b) =>
-		new Date(b.frontmatter.pubDate).valueOf() -
-		new Date(a.frontmatter.pubDate).valueOf()
-);
+const posts = await getCollection("blog");
 ---
 
 <!DOCTYPE html>
@@ -20,14 +17,20 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 	<Main class="space-y-4 xl:space-y-8">
 		<h1 class="text-xl font-semibold">{">"} All Blog Entries</h1>
 		{
-			posts.map((post) => (
-				<Post
-					url={post.url}
-					title={post.frontmatter.title}
-					date={post.frontmatter.pubDate}
-					description={post.frontmatter.description}
-				/>
-			))
+			posts
+				.sort(
+					(a, b) =>
+						new Date(b.data.pubDate).valueOf() -
+						new Date(a.data.pubDate).valueOf()
+				)
+				.map((post) => (
+					<Post
+						url={`blog/${post.slug}`}
+						title={post.data.title}
+						date={post.data.pubDate}
+						description={post.data.description}
+					/>
+				))
 		}
 	</Main>
 </html>
