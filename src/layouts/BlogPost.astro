@@ -2,8 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import DateLabel from "../components/DateLabel.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Main from "../layouts/Main.astro";
 
 export interface Props {
 	content: {
@@ -25,10 +24,7 @@ const {
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body
-		class="w-screen h-screen flex flex-col font-atkinson bg-dark text-white px-4 md:px-24 lg:px-48 xl:px-56 2xl:px-96"
-	>
-		<Header />
+	<Main>
 		<article
 			class="font-normal leading-relaxed text-lg text-left space-y-4"
 		>
@@ -38,7 +34,6 @@ const {
 			</div>
 			<slot />
 		</article>
-		<Footer />
 		<style>
 			article :global(h1, h2, h3, h4, h5, h6) {
 				@apply font-semibold text-left;
@@ -60,5 +55,5 @@ const {
 				@apply underline;
 			}
 		</style>
-	</body>
+	</Main>
 </html>
