@@ -2,7 +2,6 @@
 title: "Course Recommendation: The Last Algorithms Course You'll Need"
 description: "Discover how The Primeagen's course, The Last Algorithms Course You Will Ever Need, reignited my passion for algorithms and data structures."
 pubDate: "May 31 2023"
-heroImage: "/placeholder-hero.jpg"
 ---
 
 I've always neglected algorithms and data structures after college, maybe my teacher never got me excited for Linked Lists, maybe Java wasn't my cup of tea, maybe I never though of any use case when a simple array list could solve 99% of my issues or maybe college was too hard back then and I had alot on my back. 

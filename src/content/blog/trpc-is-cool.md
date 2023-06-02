@@ -2,7 +2,6 @@
 title: "tPRC makes full stack development fun"
 description: "Full-stack development sometimes feels awful, tRPC makes it so easy you won't go back"
 pubDate: "Jan 23 2023"
-heroImage: "/placeholder-hero.jpg"
 ---
 
 Full stack development is a very interesting practice, you control what happens in both the back-end and front-end, you would think this would allow your tooling to be nicely integrated, but what actually happens is a great divide between these two spectrums. 

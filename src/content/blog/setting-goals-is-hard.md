@@ -2,7 +2,6 @@
 title: "Setting Goals is hard, specially as a developer"
 description: "Why is setting goals so hard? Is there a easier way to make sure I accomplish my goals?"
 pubDate: "Jan 17 2023"
-heroImage: "/placeholder-hero.jpg"
 ---
 
 At the very end of 2022 I had a nice 1 week vacation away from work, since I was still building up the habit of reading I decided to buy a new book to bring along with me. At my local library I found a copy of "Atomic Habits" by James Clear. I've seen this book recomendad everywhere throughout YouTube so I though it would be a nice read during my trip. Something struck me during this read, which reminded me of a YouTube video by one of my favorite tech personalities Theo; "Your Goals Kinda Suck - LEVEL UP As A Developer".
