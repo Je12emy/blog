@@ -1,0 +1,19 @@
+---
+export interface Props {
+    title: string;
+}
+const { title, ...attributes } = Astro.props;
+---
+
+<details
+    {...attributes}
+    class="group data-[type=warning]:border-l-orange-500 data-[type=info]:border-l-blue-500 border-l-2 p-4"
+>
+    <summary
+        class="group-data-[type=warning]:text-orange-500 group-data-[type=info]:text-blue-500 font-semibold"
+        >{title}</summary
+    >
+    <p class="text-red-600">
+        <slot />
+    </p>
+</details>

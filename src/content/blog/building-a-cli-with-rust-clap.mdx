@@ -4,6 +4,8 @@ description: "This is a very brief guide on how you can build a CLI application 
 pubDate: "Jul 31 2023"
 ---
 
+import Callout from "../../components/Callout.astro";
+
 # Building a CLI app with Clap
 
 Parsing CLI arguments with plain Rust may be a bit non intuitive.
@@ -30,9 +32,10 @@ With the [clap crate](https://docs.rs/) you are able to parse CLI arguments. To 
 clap = { version = "4.3.19", features = ["derive"] }
 ```
 
-
-> [!Warning]- Derive is a feature flag
-> Some traits like `Parser` are hidden under the `derive`  feature flag. So if you don't enable it, you will run into errors.
+<Callout title="Derive is a feature flag" data-type="warning">
+  Some traits like `Parser` are hidden under the `derive` feature flag. So if
+  you don't enable it, you will run into errors.
+</Callout>
 
 You are now able to define a struct for describing how your CLI works. In this demo CLI app, I will enable the user to create users. Notice how comments are made with 3 slashes `///` this is used by clap to generate help documentation.
 
@@ -53,12 +56,16 @@ fn main() {
 }
 ```
 
-
-> [!Warning]- Make sure `Parser` is in scope when calling `parse`
-> If you where to move the structs into a separate module, you will still need to import the `Parser` trait in your `main` function.
-
+<Callout
+  title="Make sure `Parser` is in scope when calling `parse`"
+  data-type="warning"
+>
+  If you where to move the structs into a separate module, you will still need
+  to import the `Parser` trait in your `main` function.
+</Callout>
 
 When running this application we now get the following documentation.
+
 ```
 clap-test --help
 Usage: clap-test <USERNAME> <EMAIL>
@@ -144,7 +151,7 @@ struct CreateUserCommand {
 }
 ```
 
-Notice show the argument `username` can be set using the `-u`  flag and `-e` for the email.
+Notice show the argument `username` can be set using the `-u` flag and `-e` for the email.
 
 ```
 clap-test user create -h
@@ -160,7 +167,7 @@ Options:
 
 # Global Flags
 
-Suppose you would like to enabled an **optional** global flag which will affect all sub-comands, this is posible with the `global` argument. 
+Suppose you would like to enabled an **optional** global flag which will affect all sub-comands, this is posible with the `global` argument.
 
 ```rust
 #[derive(Debug, Parser)]
@@ -209,7 +216,7 @@ struct Cli {
     #[arg(global = true, default_value = INVALID_TOKEN_DEFAULT_VALUE, short, long)]
     pub access_token: String,
 }
-  
+
 fn main() {
     let args = Cli::parse();
     let mut cmd = Cli::command();
