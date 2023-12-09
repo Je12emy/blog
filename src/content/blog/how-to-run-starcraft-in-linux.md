@@ -1,7 +1,7 @@
 ---
 title: "How to run Starcraft 2 in Linux"
 description: "A not detailed guide for how to run Starcraft 2 in Linux"
-pubDate: "Dic 09 2023"
+pubDate: "Dec 09 2023"
 ---
 
 I'm on an RTS itch lately, so naturally, I decided to play Starcraft 2. Sadly, Steam can't help us out with that so we must rely on some other ways. So, I decided to document how I got thing working on my set-up.
